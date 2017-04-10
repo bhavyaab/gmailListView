@@ -1,0 +1,13 @@
+{
+  "name": "gmailListView",
+  "version": "1.0.0",
+  "description": "",
+  "main": "entry.js",
+  "scripts": {
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "build-watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
