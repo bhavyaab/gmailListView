@@ -5,9 +5,9 @@ const webpack = require('webpack');
 const HTMLPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 dotenv.load();
 const production = process.env.NODE_ENV === 'production';
+
 let plugins = [
   new ExtractTextPlugin('bundle.css'),
   new HTMLPlugin({ template: `${__dirname}/app/index.html` }),
@@ -56,9 +56,10 @@ module.exports = {
         loader: 'url?limit=10000&name=image/[hash].[ext]'
       },
       {
-       test: /\.scss$/,
-       loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap')
-     }
+        test: /\.scss$/,
+        console.log(test);
+        loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap')
+      }
     ]
   }
 };
