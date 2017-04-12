@@ -8,7 +8,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 dotenv.load();
 const production = process.env.NODE_ENV === 'production';
-
 let plugins = [
   new ExtractTextPlugin('bundle.css'),
   new HTMLPlugin({ template: `${__dirname}/app/index.html` }),
@@ -57,10 +56,9 @@ module.exports = {
         loader: 'url?limit=10000&name=image/[hash].[ext]'
       },
       {
-        test: /\.scss$/,
-        // loader: ExtractTextPlugin.extract('style', use: 'css!resolve-url!sass?sourceMap')
-        loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap')
-      }
+       test: /\.scss$/,
+       loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap')
+     }
     ]
   }
 };
