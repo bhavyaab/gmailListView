@@ -57,7 +57,6 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        console.log(test);
         loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap')
       }
     ]
