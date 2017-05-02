@@ -1,24 +1,13 @@
 'use strict';
 
 
-module.exports = ['$q', '$log', '$http', authService];
-
-function authService('$q', '$log', '$http'){
-  $log.debug('authService');
-
-  let service = {};
-  let token = null;
-
-
-}
-
-
-
-
 var fs = require('fs');
 var readline = require('readline');
 var google = require('googleapis');
 var googleAuth = require('google-auth-library');
+
+module.exports = ['$q', '$log', '$http', authService];
+
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/gmail-nodejs-quickstart.json
@@ -35,9 +24,18 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
   }
   // Authorize a client with the loaded credentials, then call the
   // Gmail API.
+  console.log('gmail auth - ');
   authorize(JSON.parse(content), listLabels);
 });
 
+function authService($q, $log, $http){
+  $log.debug('authService');
+
+  let service = {};
+  let token = null;
+
+
+}
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
  * given callback function.

@@ -22,7 +22,6 @@ context.keys().forEach( path => {
 context = require.context('./view/', true, /\.js$/);
 context.keys().forEach( key => {
   let name = pascalcase(path.basename(key, '.js'));
-  console.log('name--- ', name);
   app.controller(name, context(key));
 });
 
